@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro </title>
+  <link rel="stylesheet" href="cadastro.css">
+</head>
+<body>
+    <h2>Login</h2>
+  <form id="loginForm">
+    <label for="loginUser">Usuário:</label>
+    <input type="text" id="loginUser" required />
+    <label for="loginPass">Senha:</label>
+    <input type="password" id="loginPass" required />
+    <button type="submit">Entrar</button>
+  </form>
+
+  <h2>Cadastro</h2>
+  <form id="cadastroForm">
+    <label for="cadUser">Usuário:</label>
+    <input type="text" id="cadUser" required />
+    <label for="cadPass">Senha:</label>
+    <input type="password" id="cadPass" required />
+    <button type="submit">Cadastrar</button>
+  </form>
+  
+
+  <script>
+    function salvarUsuario(user, pass) {
+      let usuarios = JSON.parse(localStorage.getItem('usuarios') || '{}');
+      if (usuarios[user]) return false;
+      usuarios[user] = pass;
+      localStorage.setItem('usuarios', JSON.stringify(usuarios));
+      return true;
+    }
+
+    function verificarLogin(user, pass) {
+      let usuarios = JSON.parse(localStorage.getItem('usuarios') || '{}');
+      return usuarios[user] === pass;
+    }
+
+    document.getElementById('cadastroForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const user = document.getElementById('cadUser').value.trim();
+      const pass = document.getElementById('cadPass').value.trim();
+
+      if (salvarUsuario(user, pass)) {
+        alert('Usuário cadastrado com sucesso!');
+        this.reset();
+      } else {
+        alert('Usuário já existe.');
+      }
+    });
+
+    document.getElementById('loginForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const user = document.getElementById('loginUser').value.trim();
+      const pass = document.getElementById('loginPass').value.trim();
+
+      if (verificarLogin(user, pass)) {
+        localStorage.setItem('usuarioLogado', user);
+        window.location.href = "Pagina inicial.html";
+      } else {
+        alert('Usuário ou senha inválidos.');
+      }
+    });
+    
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+body{
+  background-image: url(../estrelas.jpg);
+  background-color: black;
+  border-color: purple;
+  border-style:groove;
+  background-repeat:no-repeat;
+  background-size:cover;
+  
+  h1{
+    color: rgb(17, 224, 252);
+  }
+
+  p{
+    color: rgb(17, 224, 252);
+    font-size: x-large;
+  }
+  
+}
+ #logo {
+      width: 150px;
+      cursor: pointer;
+      transition: transform 0.3s;
+      
+    }
+.header{
+  padding: 80px 80px;
+  background-image: url(fundo\ de\ cidade.jpg);
+  background-size:auto;
+  background-repeat:repeat-x;
+  display: flexbox;
+  
+  a{ color: white;
+  padding: 5%;
+  text-decoration: none;
+  
+ }
+ .navbar{
+   display: flex;
+   justify-content: space-around;
+   width: 100%;
+}
+a{
+    color: white;
+    text-decoration: none;
+    padding: 6px 10px;
+    margin: 0px 6px;
+    display: flex;
+    font-size: xx-large;
+}
+
+#paginaativa, a:hover{
+    background-color: purple;
+    color: white;
+    border-radius: 8px;
+}
+     
+}

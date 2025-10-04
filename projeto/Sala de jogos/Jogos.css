@@ -1,0 +1,72 @@
+body{
+  background-color: black;
+  border-color: purple;
+  border-style: double;
+  text-align: center;
+
+  h1{
+    color: purple;
+  }
+
+  p{
+    color: purple;
+  }
+  
+}
+
+.header{
+   padding: 80px 80px;
+  background-image: url(fundo\ de\ cidade.jpg);
+  background-size:auto;
+  background-repeat:repeat-x;
+  display: flexbox;
+  
+  
+  a{ color: white;
+  padding: 5%;
+  text-decoration: none;
+  display: flex;
+  font-size: xx-large;
+ }
+ .navbar{
+   display: flex;
+   justify-content: space-around;
+   width: 100%;
+}
+a{
+    color: white;
+    text-decoration: none;
+    padding: 6px 10px;
+    margin: 0px 6px;
+}
+
+#paginaativa, a:hover{
+    background-color: purple;
+    color: white;
+    border-radius: 8px;
+}
+    
+}
+
+.imagem {
+
+  height: 10vw;
+  border-radius: 10px;
+  padding: 15px;
+  height: 100px;
+}
+ #logo {
+      width: 150px;
+      cursor: pointer;
+      transition: transform 0.3s;
+      
+    }
+a {
+
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: rgb(251, 251, 251);
+    padding: 5px 10px;
+}
+
